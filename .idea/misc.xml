@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/drawable/ic_launcher_background.xml" value="0.11" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.11" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/drawable/ic_logo_black_nonstop.xml" value="0.11" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/drawable/ic_logo_color_nonstop.xml" value="0.11" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/drawable/ic_logo_text_black_nonstop.xml" value="0.11" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/drawable/ic_logo_text_color_nonstop.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/layout/activity_loading.xml" value="0.2351851851851852" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorab/app/src/main/res/layout/activity_main.xml" value="0.2351851851851852" />
       </map>
