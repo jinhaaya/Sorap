@@ -28,4 +28,14 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // 클릭된 메뉴 아이템의 아이디 마다 when 구절로 클릭시 동작을 설정한다.
+        when(item.itemId){
+            R.id.action_setting->{
+                setContentView(R.layout.activity_setting)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
