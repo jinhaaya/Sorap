@@ -15,6 +15,8 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
+            android:label=""
+            android:icon="@drawable/ic_logo_text_black_nonstop"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>

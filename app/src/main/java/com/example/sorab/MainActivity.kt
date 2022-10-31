@@ -1,22 +1,24 @@
 package com.example.sorab
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         setTheme(R.style.Theme_Sorab)
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            val window = this.window
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.statusBarColor = this.resources.getColor(R.color.white)
+        var i = 0
+        while (i < 1000000000) {
+            i++
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //val actionBar: android.app.ActionBar? = actionBar
+        //getActionBar()!!.setIcon(R.drawable.ic_logo_text_black_nonstop)
     }
 }
