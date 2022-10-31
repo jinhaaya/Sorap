@@ -1,4 +1,4 @@
-package com.example.sorab
+package com.example.sorap
 
 import org.junit.Test
 

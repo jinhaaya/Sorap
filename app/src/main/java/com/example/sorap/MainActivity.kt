@@ -1,10 +1,9 @@
-package com.example.sorab
+package com.example.sorap
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
