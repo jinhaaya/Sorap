@@ -1,24 +1,28 @@
 package com.example.sorab
 
-import android.os.Build
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.appcompat.app.ActionBar
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    @SuppressLint("UseSupportActionBar")
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        // Loading 종료 후 메인화면으로 변경
         setTheme(R.style.Theme_Sorab)
-
-        var i = 0
-        while (i < 1000000000) {
-            i++
-        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val actionBar: android.app.ActionBar? = actionBar
-        //getActionBar()!!.setIcon(R.drawable.ic_logo_text_black_nonstop)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)       // main_menu 메뉴를 toolbar 메뉴 버튼으로 설정
+        return super.onCreateOptionsMenu(menu)
     }
 }

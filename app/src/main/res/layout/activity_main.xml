@@ -14,8 +14,8 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/logo"
