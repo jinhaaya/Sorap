@@ -5,8 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +23,18 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+
+        // fab 설정
+        val fab1 : View = findViewById(R.id.fab)
+        fab1.setOnClickListener(
+            // 파일 open
+        )
+
+    }
+
+    override fun onStart() {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+        super.onStart()
     }
 
 
@@ -46,16 +58,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // 클릭된 메뉴 아이템의 아이디 마다 when 구절로 클릭시 동작을 설정한다.
+        // 클릭된 메뉴 아이템의 아이디 마다 when 구절로 클릭시 동작을 설정
         when(item.itemId){
             R.id.action_setting->{
                 supportActionBar!!.setDisplayHomeAsUpEnabled(true)
                 val intent = Intent(this, SettingActivity::class.java)
                 startActivity(intent)
-                //setContentView(R.layout.activity_setting)
             }
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
 }
