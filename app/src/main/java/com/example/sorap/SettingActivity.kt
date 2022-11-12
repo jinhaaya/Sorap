@@ -1,8 +1,12 @@
 package com.example.sorap
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_setting.*
+
 
 class SettingActivity : AppCompatActivity(){
 
@@ -11,11 +15,25 @@ class SettingActivity : AppCompatActivity(){
         setContentView(R.layout.activity_setting)
 
         // ActionBar 설정
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar_setting)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
+    override fun onDestroy() {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+        super.onDestroy()
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 }
