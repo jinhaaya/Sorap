@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         //fab1.setOnClickListener(
             // 파일 open
         //)
-
+        setContentView(R.layout.activity_login)
     }
 
     override fun onStart() {
