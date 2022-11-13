@@ -8,12 +8,14 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.PermissionChecker.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseSupportActionBar")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -22,12 +24,14 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
 
+        // permission request
+        //if(checkSelfPermission("android.permission.CAMERA") == PERMISSION_DENIED)
+
         // fab 설정
         val fab1 : View = findViewById(R.id.fab)
         //fab1.setOnClickListener(
             // 파일 open
         //)
-        setContentView(R.layout.activity_login)
     }
 
     override fun onStart() {
