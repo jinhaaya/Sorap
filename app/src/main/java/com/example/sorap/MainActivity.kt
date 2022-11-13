@@ -14,8 +14,6 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseSupportActionBar")
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Loading 종료 후 메인화면으로 변경
-        setTheme(R.style.Theme_Sorab)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -26,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         // fab 설정
         val fab1 : View = findViewById(R.id.fab)
-        fab1.setOnClickListener(
+        //fab1.setOnClickListener(
             // 파일 open
-        )
+        //)
 
     }
 

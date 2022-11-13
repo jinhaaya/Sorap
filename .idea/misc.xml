@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.3135" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3135" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3135" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.202" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_logo_black.xml" value="0.3135" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_logo_black_nonstop.xml" value="0.2625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_logo_color_nonstop.xml" value="0.3135" />
@@ -17,6 +18,10 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_logo_text_color_nonstop.xml" value="0.3135" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_settings_24.xml" value="0.3135" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/splash.xml" value="0.2625" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout-w1240dp/activity_login2.xml" value="0.4530612244897959" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout-w936dp/activity_login2.xml" value="0.26015625" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/activity_login2.xml" value="0.346875" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/activity_main.xml" value="0.3104166666666667" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/activity_setting.xml" value="0.309375" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/switch_item.xml" value="0.3104166666666667" />
