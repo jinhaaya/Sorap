@@ -5,7 +5,6 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_setting.*
 
-
 class SettingActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +22,7 @@ class SettingActivity : AppCompatActivity(){
         when (item.getItemId()) {
             android.R.id.home -> {
                 finish()
+                overridePendingTransition(R.xml.in_right, R.xml.out_right)
                 return true
             }
         }

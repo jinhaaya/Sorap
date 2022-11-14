@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.sorap"
-        minSdk 24
+        minSdk 25
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -47,6 +47,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
     implementation 'androidx.appcompat:appcompat:1.0.0'
 }

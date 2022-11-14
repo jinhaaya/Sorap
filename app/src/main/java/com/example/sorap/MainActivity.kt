@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.PermissionChecker.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +16,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+        val intent_login = Intent(this, LoginActivity::class.java)
+        startActivity(intent_login)
+
         setContentView(R.layout.activity_main)
 
         // ActionBar 설정
@@ -32,13 +35,9 @@ class MainActivity : AppCompatActivity() {
         //fab1.setOnClickListener(
             // 파일 open
         //)
-    }
 
-    override fun onStart() {
-        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-        super.onStart()
-    }
 
+    }
 
     private var time : Long = 0
     override fun onBackPressed() {
@@ -63,9 +62,9 @@ class MainActivity : AppCompatActivity() {
         // 클릭된 메뉴 아이템의 아이디 마다 when 구절로 클릭시 동작을 설정
         when(item.itemId){
             R.id.action_setting->{
-                supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-                val intent = Intent(this, SettingActivity::class.java)
-                startActivity(intent)
+                val intent_setting = Intent(this, SettingActivity::class.java)
+                startActivity(intent_setting)
+                overridePendingTransition(R.xml.in_left, R.xml.out_left)
             }
         }
         return super.onOptionsItemSelected(item)
