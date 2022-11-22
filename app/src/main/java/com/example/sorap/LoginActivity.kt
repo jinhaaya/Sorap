@@ -2,12 +2,10 @@ package com.example.sorap
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.jcraft.jsch.JSch
-import com.jcraft.jsch.JSchException
 import com.jcraft.jsch.Session
 import kotlinx.android.synthetic.main.activity_login.*
-import java.util.*
 
 class LoginActivity : AppCompatActivity()  {
 
@@ -21,27 +19,42 @@ class LoginActivity : AppCompatActivity()  {
             startActivity(intent_signin)
         }
 
+
         // 로그인 버튼
         login_button.setOnClickListener{
             val ID = editText_id.text.toString()
             val passwd = editText_passwd.text.toString()
             var session: Session? = null
-            try {
-                session = JSch().getSession(ID, "43.200.46.130", 22)
-                session.setConfig(Properties().apply {
-                    this["StrictHostKeyChecking"] = "no"
-                })
-                session.setPassword(passwd)
-                session.connect()
+            if (Server().login(ID, passwd)) {
                 login_button.text = "success"
                 val login_intent = Intent(this, MainActivity::class.java)
-                //login_intent.putExtra("ID", ID)
+                login_intent.putExtra("ID", ID)
                 startActivity(login_intent)
-            }catch (ex: JSchException) {
-                login_button.text = "FAIL"
-                when (ex.message) {
-                }
             }
+            else {
+                login_button.text = "fail"
+            }
+        }
+
+        // 임시 로그인
+        temp_button.setOnClickListener{
+            val ID = editText_id.text.toString()
+            val login_intent = Intent(this, MainActivity::class.java)
+            login_intent.putExtra("ID", ID)
+            startActivity(login_intent)
+        }
+
+    }
+
+    private var time : Long = 0
+    override fun onBackPressed() {
+        // 2초내에 2번 Back Key 두번 누를 시 앱 종료
+        if(System.currentTimeMillis() - time >= 2000){
+            time=System.currentTimeMillis()
+            Toast.makeText(applicationContext, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show()
+        }
+        else if(System.currentTimeMillis() - time < 2000){
+            finishAffinity()
         }
     }
 }
