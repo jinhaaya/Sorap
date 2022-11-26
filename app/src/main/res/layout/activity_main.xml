@@ -40,11 +40,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nullID"
+        android:text="null ID"
         android:textSize="20pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_textlogo" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
