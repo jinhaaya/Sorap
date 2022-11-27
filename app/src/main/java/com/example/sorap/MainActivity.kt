@@ -18,12 +18,19 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
+import androidx.preference.ListPreference
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    @SuppressLint("UseSupportActionBar")
+    //lateinit var view_type
+    //lateinit var sort_type
+
+
+    @Suppress("DEPRECATION")
+    @SuppressLint("UseSupportActionBar", "ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -36,8 +43,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         setContentView(R.layout.activity_main)
-        ////
-        textView.text = ID
 
         // ActionBar 설정
         setSupportActionBar(toolbar)
@@ -55,12 +60,35 @@ class MainActivity : AppCompatActivity() {
             // 파일 open
         openFile()
         }
+
+        // sort, view 버튼
+
+        var cur_sort_type = 0
+        var cur_view_type = 0
+        if (cur_sort_type == 0) sort_type.setImageResource(R.drawable.ic_baseline_calendar)
+        else sort_type.setImageResource(R.drawable.ic_baseline_abc)
+        if (cur_view_type == 0) view_type.setImageResource(R.drawable.ic_baseline_grid)
+        else view_type.setImageResource(R.drawable.ic_baseline_view_horizontal)
+
+        sort_type.setOnClickListener {
+            cur_sort_type = 1 - cur_sort_type
+            if (cur_sort_type == 0) sort_type.setImageResource(R.drawable.ic_baseline_calendar)
+            else sort_type.setImageResource(R.drawable.ic_baseline_abc)
+        }
+        view_type.setOnClickListener {
+            cur_view_type = 1 - cur_view_type
+            if (cur_view_type == 0) view_type.setImageResource(R.drawable.ic_baseline_grid)
+            else view_type.setImageResource(R.drawable.ic_baseline_view_horizontal)
+
+        }
     }
+
+
 
     @RequiresApi(Build.VERSION_CODES.R)
     fun getPermission(){
         val permission = mutableMapOf<String, String>()
-        permission["camera"] = Manifest.permission.CAMERA
+        //permission["camera"] = Manifest.permission.CAMERA
         permission["storageRead"] = Manifest.permission.READ_EXTERNAL_STORAGE
         permission["storageWrite"] =  Manifest.permission.WRITE_EXTERNAL_STORAGE
         permission["storageManage"] =  Manifest.permission.MANAGE_EXTERNAL_STORAGE

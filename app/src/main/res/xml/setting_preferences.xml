@@ -11,7 +11,7 @@
             app:defaultValue="Grid view"
             app:entries="@array/view_entries"
             app:entryValues="@array/view_values"
-            app:key="Grid view"
+            app:key="view_type"
             app:title="보기 방식"
             app:useSimpleSummaryProvider="true" />
 

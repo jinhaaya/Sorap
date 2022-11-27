@@ -21,6 +21,7 @@ class SettingActivity : AppCompatActivity(){
         setSupportActionBar(toolbar_setting)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
