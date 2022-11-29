@@ -26,16 +26,19 @@
 
         <activity
             android:name=".LoginActivity"
-            android:label="LogIn">
+            android:exported="true"
+            android:label="LogIn"
+            android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
 
         <activity
-            android:name=".SignInActivity"
+            android:name=".SignUpActivity"
             android:label="SignIn"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />

@@ -67,7 +67,7 @@
         android:layout_marginTop="6dp"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/directory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -79,6 +79,18 @@
         android:textColor="@color/green_200"
         android:textStyle="bold"
         />
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        android:textSize="10pt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

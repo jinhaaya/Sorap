@@ -2,6 +2,7 @@ package com.example.sorap
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.Intent.ACTION_OPEN_DOCUMENT
 import android.content.pm.PackageManager
@@ -9,6 +10,8 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.preference.ListPreference
+import android.preference.Preference
 import android.provider.OpenableColumns
 import android.util.Log
 import android.view.Menu
@@ -18,9 +21,9 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.toDrawable
-import androidx.preference.ListPreference
+import androidx.preference.PreferenceFragmentCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.absoluteValue
 
 
 class MainActivity : AppCompatActivity() {
@@ -63,6 +66,9 @@ class MainActivity : AppCompatActivity() {
 
         // sort, view 버튼
 
+        val a = this.getSharedPreferences("view_type", Context.MODE_PRIVATE)
+        R.xml.setting_preferences
+        test.text = a.toString()
         var cur_sort_type = 0
         var cur_view_type = 0
         if (cur_sort_type == 0) sort_type.setImageResource(R.drawable.ic_baseline_calendar)
@@ -79,7 +85,6 @@ class MainActivity : AppCompatActivity() {
             cur_view_type = 1 - cur_view_type
             if (cur_view_type == 0) view_type.setImageResource(R.drawable.ic_baseline_grid)
             else view_type.setImageResource(R.drawable.ic_baseline_view_horizontal)
-
         }
     }
 
@@ -152,6 +157,8 @@ class MainActivity : AppCompatActivity() {
             if (data != null) {
                 val uri = data.data
                 Log.e("uri", uri.toString())
+                val filename = getFileName(uri!!)
+                test.text = filename
             }
         }
     }

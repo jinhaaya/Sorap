@@ -21,7 +21,6 @@ class SettingActivity : AppCompatActivity(){
         setSupportActionBar(toolbar_setting)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
@@ -37,6 +36,7 @@ class SettingActivity : AppCompatActivity(){
                 overridePendingTransition(R.xml.in_right, R.xml.out_right)
                 return true
             }
+
         }
         return super.onOptionsItemSelected(item)
     }
