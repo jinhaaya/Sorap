@@ -3,6 +3,7 @@ package com.example.sorap
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import kotlinx.android.synthetic.main.activity_setting.*
 

@@ -10,8 +10,6 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.preference.ListPreference
-import android.preference.Preference
 import android.provider.OpenableColumns
 import android.util.Log
 import android.view.Menu
@@ -21,9 +19,10 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.preference.PreferenceFragmentCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.math.absoluteValue
 
 
 class MainActivity : AppCompatActivity() {
@@ -69,8 +68,8 @@ class MainActivity : AppCompatActivity() {
         val a = this.getSharedPreferences("view_type", Context.MODE_PRIVATE)
         R.xml.setting_preferences
         test.text = a.toString()
-        var cur_sort_type = 0
-        var cur_view_type = 0
+        var cur_sort_type = 0   // 0 : 날짜순, 1 : 이름순
+        var cur_view_type = 0   // 0 : Grid, 1: Horizontal
         if (cur_sort_type == 0) sort_type.setImageResource(R.drawable.ic_baseline_calendar)
         else sort_type.setImageResource(R.drawable.ic_baseline_abc)
         if (cur_view_type == 0) view_type.setImageResource(R.drawable.ic_baseline_grid)
@@ -80,12 +79,18 @@ class MainActivity : AppCompatActivity() {
             cur_sort_type = 1 - cur_sort_type
             if (cur_sort_type == 0) sort_type.setImageResource(R.drawable.ic_baseline_calendar)
             else sort_type.setImageResource(R.drawable.ic_baseline_abc)
+            viewChanger(cur_view_type, cur_sort_type)
         }
         view_type.setOnClickListener {
             cur_view_type = 1 - cur_view_type
             if (cur_view_type == 0) view_type.setImageResource(R.drawable.ic_baseline_grid)
             else view_type.setImageResource(R.drawable.ic_baseline_view_horizontal)
+            viewChanger(cur_view_type, cur_sort_type)
         }
+
+        // Grid/Horizontal View
+        viewChanger(cur_view_type, cur_sort_type)
+
     }
 
 
@@ -158,7 +163,7 @@ class MainActivity : AppCompatActivity() {
                 val uri = data.data
                 Log.e("uri", uri.toString())
                 val filename = getFileName(uri!!)
-                test.text = filename
+                test.text = uri.toString()
             }
         }
     }
@@ -184,5 +189,28 @@ class MainActivity : AppCompatActivity() {
         return result
     }
 
+    fun viewChanger(view_type : Int, sort_type : Int){
+        var list = arrayListOf("Title 1", "asd", "123", "가나다", "나다라", "Title 6", "Title 11", "Title 8")
+        if (sort_type == 1) list.sort()
 
+        if (view_type == 0){
+            var listManager = GridLayoutManager(this, 3)
+            var listAdapter = GridViewAdapter(list)
+
+            var recyclerList = recycler_view.apply {
+                setHasFixedSize(true)
+                layoutManager = listManager
+                adapter = listAdapter
+            }
+        }
+        else if (view_type == 1){
+            var manager01 = LinearLayoutManager(this)
+            var adapter01 = HorizontalViewAdapter(list)
+
+            var RecyclerView01 = recycler_view.apply {
+                adapter = adapter01
+                layoutManager = manager01
+            }
+        }
+    }
 }
