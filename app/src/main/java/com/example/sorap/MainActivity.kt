@@ -27,9 +27,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    //lateinit var view_type
-    //lateinit var sort_type
-
+    var cur_sort_type = 0   // 0 : 날짜순, 1 : 이름순
+    var cur_view_type = 0   // 0 : Grid, 1: Horizontal
+    var auto_classify = 0   // 0 : 사용자 선택 폴더 분류, 1 : 자동 폴더 분류
 
     @Suppress("DEPRECATION")
     @SuppressLint("UseSupportActionBar", "ResourceAsColor")
@@ -60,7 +60,12 @@ class MainActivity : AppCompatActivity() {
         val uri : Uri = Uri.EMPTY
         fab1.setOnClickListener{
             // 파일 open
-        openFile()
+            openFile()
+            // TODO - 파일업로드, 폴더 확인
+            var directory_name = ""
+            if(auto_classify == 1){
+                var user_directory_name = ""
+            }
         }
 
         // sort, view 버튼
@@ -68,8 +73,8 @@ class MainActivity : AppCompatActivity() {
         val a = this.getSharedPreferences("view_type", Context.MODE_PRIVATE)
         R.xml.setting_preferences
         test.text = a.toString()
-        var cur_sort_type = 0   // 0 : 날짜순, 1 : 이름순
-        var cur_view_type = 0   // 0 : Grid, 1: Horizontal
+        //var cur_sort_type = 0   // 0 : 날짜순, 1 : 이름순
+        //var cur_view_type = 0   // 0 : Grid, 1: Horizontal
         if (cur_sort_type == 0) sort_type.setImageResource(R.drawable.ic_baseline_calendar)
         else sort_type.setImageResource(R.drawable.ic_baseline_abc)
         if (cur_view_type == 0) view_type.setImageResource(R.drawable.ic_baseline_grid)
@@ -139,6 +144,9 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.action_setting->{
                 val intent_setting = Intent(this, SettingActivity::class.java)
+                intent_setting.putExtra("sort_type", cur_sort_type)
+                intent_setting.putExtra("view_type", cur_view_type)
+                intent_setting.putExtra("auto_classify", auto_classify)
                 startActivity(intent_setting)
                 overridePendingTransition(R.xml.in_left, R.xml.out_left)
             }

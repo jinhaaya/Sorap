@@ -2,26 +2,39 @@ package com.example.sorap
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.example.sorap.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.android.synthetic.main.activity_signup.*
+
 
 class SettingActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.settings, SettingsFragment())
-                .commit()
-        }
+
+        var sort_type = intent.getStringExtra("sort_type")
+        var view_type  = intent.getStringExtra("view_type")
+        var auto_classify  = intent.getStringExtra("auto_classify")
+
         // ActionBar 설정
         setSupportActionBar(toolbar_setting)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        // 버튼, 스위치 설정
+        //if (auto_classify!!.toInt() == 1) auto_classification_switch.setChecked(true)
+        //else auto_classification_switch.setChecked(false)
+
+        logout_button.setOnClickListener {
+
+        }
+        delete_account.setOnClickListener{
+
+        }
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {

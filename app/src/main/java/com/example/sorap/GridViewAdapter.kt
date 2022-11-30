@@ -5,14 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.list_grid_view.view.*
+import kotlinx.android.synthetic.main.temp_element.view.*
 
 class GridViewAdapter(var list: ArrayList<String>): RecyclerView.Adapter<GridViewAdapter.GridAdapter>() {
 
     class GridAdapter(val layout: View): RecyclerView.ViewHolder(layout)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridAdapter {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.list_grid_view, parent, false)
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.temp_element, parent, false)
 
         return GridAdapter(view)
     }

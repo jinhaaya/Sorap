@@ -15,15 +15,116 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <FrameLayout
-        android:animateLayoutChanges="true"
-        android:id="@+id/settings"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="앱 설정"
+        android:textColor="@color/blue_500"
         app:layout_constraintTop_toBottomOf="@id/toolbar_setting"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"/>
 
+    <Switch
+        android:id="@+id/auto_classification_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title1" />
 
+    <TextView
+        android:id="@+id/auto_classification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="폴더 자동분류"
+        android:textColor="@color/black"
+        android:textSize="8pt"
+        app:layout_constraintTop_toBottomOf="@id/title1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="40dp"/>
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/auto_classification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정 설정"
+        android:textColor="@color/blue_500"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"/>
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그 아웃"
+        android:textColor="@color/black"
+        android:textSize="8pt"
+        app:layout_constraintTop_toTopOf="@id/logout_button"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="40dp"/>
+    <TextView
+        android:id="@+id/delete_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원 탈퇴"
+        android:textColor="@color/black"
+        android:textSize="8pt"
+        app:layout_constraintTop_toTopOf="@id/delete_account_button"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="40dp"/>
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:elevation="4dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:background="@drawable/ic_baseline_transparent"
+        app:layout_constraintTop_toBottomOf="@id/title2"/>
+    <Button
+        android:id="@+id/delete_account_button"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:elevation="4dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:background="@drawable/ic_baseline_transparent"
+        app:layout_constraintTop_toBottomOf="@id/logout_button"/>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/delete_account"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
