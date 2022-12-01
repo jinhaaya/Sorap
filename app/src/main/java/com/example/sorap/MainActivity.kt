@@ -171,7 +171,8 @@ class MainActivity : AppCompatActivity() {
                 val uri = data.data
                 Log.e("uri", uri.toString())
                 val filename = getFileName(uri!!)
-                test.text = uri.toString()
+                //test.text = uri.toString()
+                test.text = "test.png"
             }
         }
     }
@@ -198,7 +199,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun viewChanger(view_type : Int, sort_type : Int){
-        var list = arrayListOf("Title 1", "asd", "123", "가나다", "나다라", "Title 6", "Title 11", "Title 8")
+        var list = arrayListOf("test1.txt", "test2.txt", "aa.pdf", "bb.pdf", "가나다.hwp", "라마바.hwp", "Title1.jpg", "Title2.jpg")
         if (sort_type == 1) list.sort()
 
         if (view_type == 0){

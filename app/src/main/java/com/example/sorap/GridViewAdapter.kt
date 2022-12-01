@@ -12,7 +12,7 @@ class GridViewAdapter(var list: ArrayList<String>): RecyclerView.Adapter<GridVie
     class GridAdapter(val layout: View): RecyclerView.ViewHolder(layout)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridAdapter {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.temp_element, parent, false)
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.list_grid_view, parent, false)
 
         return GridAdapter(view)
     }

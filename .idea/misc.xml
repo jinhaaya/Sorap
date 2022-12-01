@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.3135" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable-anydpi/ic_stat_name.xml" value="0.307" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_baseline_abc.xml" value="0.3295" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_baseline_abc_24.xml" value="0.3255" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.3135" />
@@ -40,7 +41,9 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/grid_view.xml" value="0.3458333333333333" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/horizontal_view.xml" value="0.26015625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/list_grid_view.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/list_horizontal_view.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/switch_item.xml" value="0.3104166666666667" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/temp_element.xml" value="0.3265625" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/layout/toolbar.xml" value="0.309375" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/menu/menu.xml" value="0.3104166666666667" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/Sorap/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25" />
