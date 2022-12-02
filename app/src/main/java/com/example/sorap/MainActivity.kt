@@ -96,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         // Grid/Horizontal View
         viewChanger(cur_view_type, cur_sort_type)
 
+        test.text = ""
     }
 
 
@@ -172,7 +173,6 @@ class MainActivity : AppCompatActivity() {
                 Log.e("uri", uri.toString())
                 val filename = getFileName(uri!!)
                 //test.text = uri.toString()
-                test.text = "test.png"
             }
         }
     }
@@ -199,11 +199,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun viewChanger(view_type : Int, sort_type : Int){
-        var list = arrayListOf("test1.txt", "test2.txt", "aa.pdf", "bb.pdf", "가나다.hwp", "라마바.hwp", "Title1.jpg", "Title2.jpg")
+        var list = arrayListOf("test1.txt", "test2.txt", "aa.pdf", "bb.pdf", "가나다.hwp", "라마바.hwp",
+            "title1.jpg", "title2.jpg", "123.pptx", "234.pptx", "qwer.doc", "asdf.docx",
+            "tag1.css", "tag2.css", "sorap.html")
         if (sort_type == 1) list.sort()
 
         if (view_type == 0){
-            var listManager = GridLayoutManager(this, 3)
+            var listManager = GridLayoutManager(this, 4)
             var listAdapter = GridViewAdapter(list)
 
             var recyclerList = recycler_view.apply {
